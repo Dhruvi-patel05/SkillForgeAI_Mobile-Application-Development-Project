@@ -1,0 +1,18 @@
+<resources>
+<string name="app_name">Skill Forge AI</string>
+
+<string name="tagline">
+        Learn Smarter. Grow Faster. Succeed with AI.
+    </string>
+
+<string name="login">Login</string>
+<string name="register">Register</string>
+<string name="forgot_password">Forgot Password?</string>
+
+<string name="dashboard">Dashboard</string>
+<string name="courses">Courses</string>
+<string name="ai_mentor">AI Mentor</string>
+<string name="resume_builder">Resume Builder</string>
+<string name="skill_tracker">Skill Tracker</string>
+<string name="profile">Profile</string>
+</resources>

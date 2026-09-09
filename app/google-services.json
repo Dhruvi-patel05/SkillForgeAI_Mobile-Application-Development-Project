@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028585867789",
+    "project_id": "skillforgeai-aaeed",
+    "storage_bucket": "skillforgeai-aaeed.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028585867789:android:e0db4d3755f015477d2344",
+        "android_client_info": {
+          "package_name": "com.example.skillforgeai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqQKQD_0q467NyyDT9WgKtU-z2xMgnQSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
