@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.dashboard.DashboardActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHeader"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="@color/primary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back 👋"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/imgProfile"
+                app:layout_constraintTop_toTopOf="@id/imgProfile"
+                android:layout_marginStart="12dp"/>
+
+            <TextView
+                android:id="@+id/txtUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dhruvi"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="@id/txtWelcome"
+                app:layout_constraintTop_toBottomOf="@id/txtWelcome"/>
+
+            <ImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollDashboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLearningProgress"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/txtLearningTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Learning Progress"
+                        android:textStyle="bold"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/txtProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65%"
+                        android:textSize="38sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        app:layout_constraintTop_toBottomOf="@id/txtLearningTitle"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressLearning"
+                        android:layout_width="0dp"
+                        android:layout_height="8dp"
+                        android:progress="65"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPlacementScore"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toBottomOf="@id/cardLearningProgress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardStreak">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="82%"
+                        android:textSize="28sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Placement Score"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardStreak"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toBottomOf="@id/cardLearningProgress"
+                app:layout_constraintStart_toEndOf="@id/cardPlacementScore"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 7"
+                        android:textSize="28sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Day Streak"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txtQuickActions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quick Actions"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/cardPlacementScore"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvQuickActions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_dashboard_card"
+                app:layout_constraintTop_toBottomOf="@id/txtQuickActions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtContinueLearning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continue Learning"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rvQuickActions"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContinueLearning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_course"
+                app:layout_constraintTop_toBottomOf="@id/txtContinueLearning"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtRecommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recommended Courses"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rvContinueLearning"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRecommendedCourses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/item_course"
+                app:layout_constraintTop_toBottomOf="@id/txtRecommended"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

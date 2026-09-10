@@ -1,9 +1,8 @@
 package com.example.skillforgeai.data.model
 
-data class Notification(
+data class AutomationTask(
     val id: String = "",
     val title: String = "",
-    val message: String = "",
-    val time: String = ""
-
+    val description: String = "",
+    val isEnabled: Boolean = false
 )
