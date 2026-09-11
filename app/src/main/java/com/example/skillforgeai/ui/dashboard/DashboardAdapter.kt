@@ -6,40 +6,47 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.skillforgeai.databinding.ItemDashboardCardBinding
 
 class DashboardAdapter(
-    private val dashboardList: List<DashboardItem>
+    private val list: List<DashboardItem>
 ) : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
     inner class ViewHolder(
-        private val binding: ItemDashboardCardBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-
-        fun bind(item: DashboardItem) {
-
-            binding.imgIcon.setImageResource(item.icon)
-
-            binding.txtTitle.text = item.title
-
-            binding.txtValue.text = item.value
-        }
-    }
+        val binding: ItemDashboardCardBinding
+    ) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int): ViewHolder {
+        viewType: Int
+    ): ViewHolder {
 
-        val binding = ItemDashboardCardBinding.inflate(
-                LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemDashboardCardBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
 
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(
-        holder: ViewHolder, position: Int) {
+        holder: ViewHolder,
+        position: Int
+    ) {
 
-        holder.bind(dashboardList[position])
+        val item = list[position]
+
+        holder.binding.imgIcon.setImageResource(
+            item.icon
+        )
+
+        holder.binding.txtTitle.text =
+            item.title
+
+        holder.binding.txtValue.text =
+            item.value
     }
 
     override fun getItemCount(): Int {
-        return dashboardList.size
+        return list.size
     }
 }

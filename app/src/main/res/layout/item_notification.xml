@@ -27,6 +27,25 @@
             app:layout_constraintStart_toEndOf="@id/imgNotification"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+        <TextView
+            android:id="@+id/txtNotificationMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="A new Android course is available."
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationTitle"/>
+
+        <TextView
+            android:id="@+id/txtNotificationTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 min ago"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/txtNotificationMessage"
+            app:layout_constraintStart_toStartOf="@id/txtNotificationTitle"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

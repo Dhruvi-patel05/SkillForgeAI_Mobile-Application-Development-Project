@@ -1,8 +1,6 @@
 package com.example.skillforgeai.di
 
 import com.example.skillforgeai.utils.Constants
-import com.google.android.datatransport.runtime.dagger.Module
-import com.google.android.datatransport.runtime.dagger.Provides
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

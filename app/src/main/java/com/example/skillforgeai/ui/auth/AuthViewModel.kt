@@ -7,7 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class AuthViewModel : ViewModel() {
 
-    private val firebaseAuth = FirebaseAuth.getInstance()
+    val firebaseAuth = FirebaseAuth.getInstance()
 
     private val _authState = MutableLiveData<String>()
     val authState: LiveData<String> = _authState

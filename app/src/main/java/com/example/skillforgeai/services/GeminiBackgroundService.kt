@@ -4,6 +4,7 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import com.example.skillforgeai.data.remote.AI.AIEngine
+import com.example.skillforgeai.data.remote.AI.GeminiApiService
 
 class GeminiBackgroundService : Service() {
 
@@ -12,7 +13,11 @@ class GeminiBackgroundService : Service() {
     override fun onCreate() {
         super.onCreate()
 
-        aiEngine = AIEngine()
+        val geminiApiService = GeminiApiService()
+
+        aiEngine = AIEngine(
+            geminiApiService
+        )
     }
 
     override fun onStartCommand(
@@ -28,7 +33,7 @@ class GeminiBackgroundService : Service() {
 
     private fun generateRoadmap() {
 
-        // Gemini AI Processing
+        // TODO Gemini AI Logic
 
     }
 

@@ -4,6 +4,7 @@
 <string name="tagline">
         Learn Smarter. Grow Faster. Succeed with AI.
     </string>
+    <string name="default_web_client_id">"1028585867789-6ltv70vav65oqr93e4krpsltjs80079b.apps.googleusercontent.com"</string>
 
 <string name="login">Login</string>
 <string name="register">Register</string>

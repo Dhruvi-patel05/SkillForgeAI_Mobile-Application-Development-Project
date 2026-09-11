@@ -2,22 +2,17 @@ package com.example.skillforgeai.ui.splash
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.skillforgeai.databinding.ActivitySplashBinding
 import com.example.skillforgeai.ui.auth.LoginActivity
 import com.example.skillforgeai.ui.dashboard.DashboardActivity
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
-
-    private val viewModel: SplashViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +29,9 @@ class SplashActivity : AppCompatActivity() {
 
             delay(3000)
 
-            if (viewModel.isUserLoggedIn()) {
+            val isLoggedIn = false
+
+            if (isLoggedIn) {
 
                 startActivity(
                     Intent(

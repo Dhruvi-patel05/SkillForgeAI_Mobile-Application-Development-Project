@@ -6,6 +6,7 @@ data class User(
     val email: String = "",
     val mobile: String = "",
     val profileImage: String = "",
+    val profession: String = "",
     val education: String = "",
     val skills: List<String> = emptyList(),
     val interests: List<String> = emptyList(),

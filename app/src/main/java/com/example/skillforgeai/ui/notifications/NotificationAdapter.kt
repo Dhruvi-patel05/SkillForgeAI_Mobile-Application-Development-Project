@@ -16,13 +16,13 @@ class NotificationAdapter(
 
         fun bind(notification: Notification) {
 
-            binding.txtTitle.text =
+            binding.txtNotificationTitle.text =
                 notification.title
 
-            binding.txtMessage.text =
+            binding.txtNotificationMessage.text =
                 notification.message
 
-            binding.txtTime.text =
+            binding.txtNotificationTime.text =
                 notification.time
         }
     }
@@ -32,12 +32,11 @@ class NotificationAdapter(
         viewType: Int
     ): ViewHolder {
 
-        val binding =
-            ItemNotificationBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
+        val binding = ItemNotificationBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        )
 
         return ViewHolder(binding)
     }
@@ -46,10 +45,7 @@ class NotificationAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-
-        holder.bind(
-            notificationList[position]
-        )
+        holder.bind(notificationList[position])
     }
 
     override fun getItemCount(): Int {

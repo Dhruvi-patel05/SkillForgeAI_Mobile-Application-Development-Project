@@ -20,7 +20,7 @@ class EditProfileActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        binding.btnSaveProfile.setOnClickListener {
+        binding.btnUpdateProfile.setOnClickListener {
 
             Toast.makeText(
                 this,

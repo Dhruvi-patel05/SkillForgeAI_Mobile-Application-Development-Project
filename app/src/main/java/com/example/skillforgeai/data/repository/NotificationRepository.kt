@@ -16,7 +16,7 @@ class NotificationRepository {
 
         return try {
 
-            database.child(notification.notificationId)
+            database.child(notification.id)
                 .setValue(notification)
                 .await()
 

@@ -2,111 +2,105 @@ package com.example.skillforgeai.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.skillforgeai.R
 import com.example.skillforgeai.databinding.ActivityDashboardBinding
-import com.example.skillforgeai.ui.ai.AIMentorActivity
-import com.example.skillforgeai.ui.courses.CoursesActivity
 import com.example.skillforgeai.ui.notifications.NotificationsActivity
-import com.example.skillforgeai.ui.placement.PlacementActivity
 import com.example.skillforgeai.ui.profile.ProfileActivity
-import com.example.skillforgeai.ui.resume.ResumeBuilderActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class DashboardActivity : AppCompatActivity() {
 
-    private lateinit var binding:
-            ActivityDashboardBinding
+    private lateinit var binding: ActivityDashboardBinding
 
-    private val viewModel:
-            DashboardViewModel by viewModels()
+    private val viewModel: DashboardViewModel by viewModels()
 
-    override fun onCreate(
-        savedInstanceState: Bundle?
-    ) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding =
-            ActivityDashboardBinding.inflate(
-                layoutInflater
-            )
-
+        binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupDashboard()
+        Log.d("DASHBOARD", "Dashboard Opened")
+
+        loadUserData()
+
+        setupRecyclerViews()
 
         setupClickListeners()
     }
 
-    private fun setupDashboard() {
+    private fun loadUserData() {
 
-        viewModel.userName.observe(this) {
+        val currentUser = FirebaseAuth.getInstance().currentUser
 
-            binding.txtWelcome.text =
-                "Hello, $it 👋"
-        }
+        if (currentUser != null) {
 
-        viewModel.dashboardItems.observe(this) {
+            binding.txtUserName.text =
+                currentUser.displayName ?: "User"
 
-            binding.rvDashboard.layoutManager =
-                GridLayoutManager(this, 2)
+            Log.d(
+                "USER_UID",
+                currentUser.uid
+            )
 
-            binding.rvDashboard.adapter =
-                DashboardAdapter(it)
+        } else {
+
+            binding.txtUserName.text = "Guest User"
         }
     }
 
+    private fun setupRecyclerViews() {
+
+        val dashboardList = arrayListOf(
+
+            DashboardItem(
+                R.drawable.ic_course,
+                "Courses",
+                "12"
+            ),
+
+            DashboardItem(
+                R.drawable.ic_learning,
+                "Skills",
+                "25"
+            ),
+
+            DashboardItem(
+                R.drawable.ic_ai,
+                "AI Score",
+                "85%"
+            ),
+
+        )
+
+        binding.rvQuickActions.layoutManager =
+            LinearLayoutManager(
+                this,
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
+
+        binding.rvQuickActions.adapter =
+            DashboardAdapter(dashboardList)
+
+        binding.rvContinueLearning.layoutManager =
+            LinearLayoutManager(this)
+
+        binding.rvContinueLearning.adapter =
+            DashboardAdapter(dashboardList)
+
+        binding.rvRecommendedCourses.layoutManager =
+            LinearLayoutManager(this)
+
+        binding.rvRecommendedCourses.adapter =
+            DashboardAdapter(dashboardList)
+    }
+
     private fun setupClickListeners() {
-
-        binding.cardCourses.setOnClickListener {
-
-            startActivity(
-                Intent(
-                    this,
-                    CoursesActivity::class.java
-                )
-            )
-        }
-
-        binding.cardAI.setOnClickListener {
-
-            startActivity(
-                Intent(
-                    this,
-                    AIMentorActivity::class.java
-                )
-            )
-        }
-
-        binding.cardResume.setOnClickListener {
-
-            startActivity(
-                Intent(
-                    this,
-                    ResumeBuilderActivity::class.java
-                )
-            )
-        }
-
-        binding.cardPlacement.setOnClickListener {
-
-            startActivity(
-                Intent(
-                    this,
-                    PlacementActivity::class.java
-                )
-            )
-        }
-
-        binding.cardSkillTracker.setOnClickListener {
-
-            startActivity(
-                Intent(
-                    this,
-                    SkillTrackerActivity::class.java
-                )
-            )
-        }
 
         binding.imgNotification.setOnClickListener {
 

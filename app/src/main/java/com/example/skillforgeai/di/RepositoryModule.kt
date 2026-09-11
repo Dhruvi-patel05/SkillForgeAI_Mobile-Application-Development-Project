@@ -1,8 +1,9 @@
 package com.example.skillforgeai.di
 
+import com.example.skillforgeai.data.remote.AI.GeminiApiService
 import com.example.skillforgeai.data.repository.*
-import com.google.android.datatransport.runtime.dagger.Module
-import com.google.android.datatransport.runtime.dagger.Provides
+import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -56,6 +57,7 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideAIRepository(): AIRepository {
-        return AIRepository()
+        val geminiApiService = GeminiApiService()
+        return AIRepository(geminiApiService)
     }
 }
