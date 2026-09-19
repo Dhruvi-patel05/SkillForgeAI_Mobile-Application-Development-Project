@@ -260,6 +260,4 @@ This project is developed for educational and academic purposes.
 
 ⭐ If you like this project, don't forget to star the repository.
 
-<img src="C:\Users\admin\Downloads" alt="Project Screenshot" width="400">
-
 
