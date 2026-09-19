@@ -1,4 +1,4 @@
-# 🚀 SkillForgeAI – AI-Powered Learning & Career Development App
+<img width="1536" height="1024" alt="ChatGPT Image Sep 19, 2026, 04_49_17 PM" src="https://github.com/user-attachments/assets/b43e42f7-58e2-4c46-9520-98c163fba9d8" /><img width="1536" height="1024" alt="ChatGPT Image Sep 19, 2026, 04_49_17 PM" src="https://github.com/user-attachments/assets/7a4411ae-6086-4a27-83ab-dd6c8bd1b928" /># 🚀 SkillForgeAI – AI-Powered Learning & Career Development App
 
 SkillForgeAI is an AI-powered Android application designed to help students and professionals improve their skills, track learning progress, prepare for placements, build resumes, and receive personalized career guidance.
 
@@ -259,3 +259,7 @@ This project is developed for educational and academic purposes.
 ---
 
 ⭐ If you like this project, don't forget to star the repository.
+
+<img src="C:\Users\admin\Downloads" alt="Project Screenshot" width="400">
+
+
